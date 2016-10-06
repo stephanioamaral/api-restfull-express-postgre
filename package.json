@@ -1,0 +1,21 @@
+{
+  "name": "Api RestFull Express Postgre",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.14.0",
+    "pg": "^6.1.0",
+    "pg-hstore": "^2.3.2",
+    "pgtools": "^0.2.2",
+    "sequelize": "^3.24.3",
+    "body-parser": "^1.15.2",
+    "jsonwebtoken": "^7.1.9",
+    "morgan": "^1.7.0"
+  }
+}
