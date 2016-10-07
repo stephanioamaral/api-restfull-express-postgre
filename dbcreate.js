@@ -2,9 +2,10 @@ process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 
 var pgtools = require('pgtools');
 var config = require('./config/config.js');
-var models = require('./app/models/');
+var Sequelize = require('sequelize');
+var sequelize = new Sequelize(config.database, config.user, config.password, config);
 
-models.sequelize
+sequelize
   .authenticate()
   .then(function () {
     console.log('Connection successful');
@@ -15,7 +16,6 @@ models.sequelize
     CreateDB();
     CreateDBTeste();
   });
-
 
 function CreateDB(){
   pgtools.createdb(config, 'users-development', function (err, res) {
