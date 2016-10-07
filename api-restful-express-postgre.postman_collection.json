@@ -1,0 +1,359 @@
+{
+	"variables": [],
+	"info": {
+		"name": "api-restful-express-postgre",
+		"_postman_id": "05131a38-55a8-6bd6-2a16-c7d700813388",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Authenticate",
+			"request": {
+				"url": "http://localhost:3000/api/authenticate",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "teste@teste.com.br",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "senha",
+							"value": "123456",
+							"type": "text",
+							"enabled": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "List Users",
+			"request": {
+				"url": "http://localhost:3000/api/user",
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNDc1ODc2ODcxLCJleHAiOjE0NzU4ODA0NzF9.pyiuCXT7W6FmwIxb7Pn1vBjYFw61U1lIIIk44y5iYsI",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Create User",
+			"request": {
+				"url": "http://localhost:3000/api/user",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "cep",
+							"value": "30380252",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "nome",
+							"value": "Teste 2",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "senha",
+							"value": "123456",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "email",
+							"value": "teste2@teste.com.br",
+							"type": "text",
+							"enabled": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get User",
+			"request": {
+				"url": "http://localhost:3000/api/user/1",
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNDc1ODA2OTk3LCJleHAiOjE0NzU4MTA1OTd9.jEyfijDXlCWLXpT_y2do3aDoS79izl1e3t1QoF6rC1M",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Delete User",
+			"request": {
+				"url": "http://localhost:3000/api/user/2",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNDc1ODA2OTk3LCJleHAiOjE0NzU4MTA1OTd9.jEyfijDXlCWLXpT_y2do3aDoS79izl1e3t1QoF6rC1M",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Create Desejo",
+			"request": {
+				"url": "http://localhost:3000/api/desejos",
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNDc1ODc2ODcxLCJleHAiOjE0NzU4ODA0NzF9.pyiuCXT7W6FmwIxb7Pn1vBjYFw61U1lIIIk44y5iYsI",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "nome",
+							"value": "Teste",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "descricao",
+							"value": "Teste de descrição do desejo",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "valor",
+							"value": "12",
+							"type": "text",
+							"enabled": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Update User",
+			"request": {
+				"url": "http://localhost:3000/api/user/1",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNDc1ODc2ODcxLCJleHAiOjE0NzU4ODA0NzF9.pyiuCXT7W6FmwIxb7Pn1vBjYFw61U1lIIIk44y5iYsI",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "cep",
+							"value": "30380252",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "nome",
+							"value": "Teste 3",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "senha",
+							"value": "123456",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "email",
+							"value": "teste3@teste.com.br",
+							"type": "text",
+							"enabled": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "List Desejos",
+			"request": {
+				"url": "http://localhost:3000/api/desejos",
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNDc1ODc2ODcxLCJleHAiOjE0NzU4ODA0NzF9.pyiuCXT7W6FmwIxb7Pn1vBjYFw61U1lIIIk44y5iYsI",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Desejo",
+			"request": {
+				"url": "http://localhost:3000/api/desejos/2",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNDc1ODc2ODcxLCJleHAiOjE0NzU4ODA0NzF9.pyiuCXT7W6FmwIxb7Pn1vBjYFw61U1lIIIk44y5iYsI",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Update Desejo",
+			"request": {
+				"url": "http://localhost:3000/api/desejos/1",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNDc1ODc2ODcxLCJleHAiOjE0NzU4ODA0NzF9.pyiuCXT7W6FmwIxb7Pn1vBjYFw61U1lIIIk44y5iYsI",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "nome",
+							"value": "Teste 2",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "descricao",
+							"value": "Teste de descrição do desejo 2",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "valor",
+							"value": "8",
+							"type": "text",
+							"enabled": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "List Desejos Filter",
+			"request": {
+				"url": "http://localhost:3000/api/desejos-filter",
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNDc1ODc2ODcxLCJleHAiOjE0NzU4ODA0NzF9.pyiuCXT7W6FmwIxb7Pn1vBjYFw61U1lIIIk44y5iYsI",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "filter",
+							"value": "Te",
+							"type": "text",
+							"enabled": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

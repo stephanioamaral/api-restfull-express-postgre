@@ -9,3 +9,10 @@ Passos para executar a aplicação.
 4) Execute o comando: sequelize db:migrate
 
 5) Para executar o projeto digite: grunt
+
+6) Para executar os testes automatizados digite: grunt test
+
+*Na pasta home do projeto existe um arquivo chamado api-restful-express-postgre.postman_collection que uma lista de requisões
+para ser importada no postman.
+
+*O token tem um periodo de expiração. Após esse período, uma nova autenticação é necessária.

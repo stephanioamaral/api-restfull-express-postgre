@@ -1,5 +1,295 @@
 [
   {
+    "type": "post",
+    "url": "api/desejos",
+    "title": "Create Desejo",
+    "name": "CreateDesejo",
+    "group": "Desejos",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "nome",
+            "description": "<p>Nome do desejo.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "descricao",
+            "description": "<p>Descrição do desejo.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "valor",
+            "description": "<p>Valor do desejo.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Object",
+            "optional": false,
+            "field": "desejo",
+            "description": "<p>Retorna um objeto que contém as informações do desejo cadastrado.</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "app/controllers/desejos.server.controller.js",
+    "groupTitle": "Desejos"
+  },
+  {
+    "type": "delete",
+    "url": "api/desejos/:id",
+    "title": "Delete Desejo",
+    "name": "DeleteDesejo",
+    "group": "Desejos",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "x-access-token",
+            "description": "<p>Users unique access-key.</p>"
+          }
+        ]
+      }
+    },
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "id",
+            "description": "<p>ID do desejo.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "deletedRecords",
+            "description": "<p>Retorna o número de registros deletados.</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "app/controllers/desejos.server.controller.js",
+    "groupTitle": "Desejos"
+  },
+  {
+    "type": "get",
+    "url": "api/desejos/:id",
+    "title": "Get Desejo by ID",
+    "name": "GetDesejo",
+    "group": "Desejos",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "x-access-token",
+            "description": "<p>Users unique access-key.</p>"
+          }
+        ]
+      }
+    },
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "id",
+            "description": "<p>ID do desejo.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Object",
+            "optional": false,
+            "field": "desejo",
+            "description": "<p>Retorna um objeto que contém as informações do desejos.</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "app/controllers/desejos.server.controller.js",
+    "groupTitle": "Desejos"
+  },
+  {
+    "type": "get",
+    "url": "api/desejos",
+    "title": "Get Desejos",
+    "name": "GetDesejos",
+    "group": "Desejos",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "x-access-token",
+            "description": "<p>Users unique access-key.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Object",
+            "optional": false,
+            "field": "desejos",
+            "description": "<p>Retorna um objeto que contém uma lista de desejos.</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "app/controllers/desejos.server.controller.js",
+    "groupTitle": "Desejos"
+  },
+  {
+    "type": "post",
+    "url": "api/desejos-filter",
+    "title": "Get Desejos by Filter",
+    "name": "GetDesejosFilter",
+    "group": "Desejos",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "x-access-token",
+            "description": "<p>Users unique access-key.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Object",
+            "optional": false,
+            "field": "desejos",
+            "description": "<p>Retorna um objeto que contém uma lista de desejos que se encaixam no filtro.</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "app/controllers/desejos.server.controller.js",
+    "groupTitle": "Desejos"
+  },
+  {
+    "type": "put",
+    "url": "api/desejos/:id",
+    "title": "Update Desejo",
+    "name": "UpdateDesejo",
+    "group": "Desejos",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "x-access-token",
+            "description": "<p>Users unique access-key.</p>"
+          }
+        ]
+      }
+    },
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "id",
+            "description": "<p>ID do desejo.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "nome",
+            "description": "<p>Nome do desejo.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "descricao",
+            "description": "<p>Descrição do desejo.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "valor",
+            "description": "<p>Valor do desejo.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "updatedRecords",
+            "description": "<p>Retorna o número de registros alterados.</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "app/controllers/desejos.server.controller.js",
+    "groupTitle": "Desejos"
+  },
+  {
     "type": "get",
     "url": "api/authenticate",
     "title": "Authenticate",
@@ -57,154 +347,10 @@
     "groupTitle": "User"
   },
   {
-    "type": "put",
-    "url": "api/user/:id",
-    "title": "Update User",
-    "name": "DeleteUser",
-    "group": "User",
-    "parameter": {
-      "fields": {
-        "Parameter": [
-          {
-            "group": "Parameter",
-            "type": "Number",
-            "optional": false,
-            "field": "id",
-            "description": "<p>ID do usuário.</p>"
-          }
-        ]
-      }
-    },
-    "success": {
-      "fields": {
-        "Success 200": [
-          {
-            "group": "Success 200",
-            "type": "Object",
-            "optional": false,
-            "field": "user",
-            "description": "<p>Retorna um objeto que contém as informações do usuário alterado.</p>"
-          }
-        ]
-      }
-    },
-    "version": "0.0.0",
-    "filename": "app/controllers/users.server.controller.js",
-    "groupTitle": "User"
-  },
-  {
-    "type": "delete",
-    "url": "api/user/:id",
-    "title": "Delete User",
-    "name": "DeleteUser",
-    "group": "User",
-    "parameter": {
-      "fields": {
-        "Parameter": [
-          {
-            "group": "Parameter",
-            "type": "Number",
-            "optional": false,
-            "field": "id",
-            "description": "<p>ID do usuário.</p>"
-          }
-        ]
-      }
-    },
-    "success": {
-      "fields": {
-        "Success 200": [
-          {
-            "group": "Success 200",
-            "type": "Object",
-            "optional": false,
-            "field": "user",
-            "description": "<p>Retorna um objeto que contém as informações do usuário deletado.</p>"
-          }
-        ]
-      }
-    },
-    "version": "0.0.0",
-    "filename": "app/controllers/users.server.controller.js",
-    "groupTitle": "User"
-  },
-  {
-    "type": "get",
-    "url": "api/user/:id",
-    "title": "Get User",
-    "name": "GetUser",
-    "group": "User",
-    "parameter": {
-      "fields": {
-        "Parameter": [
-          {
-            "group": "Parameter",
-            "type": "Number",
-            "optional": false,
-            "field": "id",
-            "description": "<p>ID do usuário.</p>"
-          }
-        ]
-      }
-    },
-    "success": {
-      "fields": {
-        "Success 200": [
-          {
-            "group": "Success 200",
-            "type": "Object",
-            "optional": false,
-            "field": "user",
-            "description": "<p>Retorna um objeto que contém as informações do usuário.</p>"
-          }
-        ]
-      }
-    },
-    "version": "0.0.0",
-    "filename": "app/controllers/users.server.controller.js",
-    "groupTitle": "User"
-  },
-  {
-    "type": "get",
-    "url": "api/user",
-    "title": "Request Get Users",
-    "name": "GetUsers",
-    "group": "User",
-    "header": {
-      "fields": {
-        "Header": [
-          {
-            "group": "Header",
-            "type": "String",
-            "optional": false,
-            "field": "x-access-token",
-            "description": "<p>Users unique access-key.</p>"
-          }
-        ]
-      }
-    },
-    "success": {
-      "fields": {
-        "Success 200": [
-          {
-            "group": "Success 200",
-            "type": "Object",
-            "optional": false,
-            "field": "user",
-            "description": "<p>Retorna um objeto que contém as informações do usuário.</p>"
-          }
-        ]
-      }
-    },
-    "version": "0.0.0",
-    "filename": "app/controllers/users.server.controller.js",
-    "groupTitle": "User"
-  },
-  {
     "type": "post",
     "url": "api/user",
     "title": "Create User",
-    "name": "PostUser",
+    "name": "CreateUser",
     "group": "User",
     "parameter": {
       "fields": {
@@ -249,6 +395,217 @@
             "optional": false,
             "field": "user",
             "description": "<p>Retorna um objeto que contém as informações do usuário cadastrado.</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "app/controllers/users.server.controller.js",
+    "groupTitle": "User"
+  },
+  {
+    "type": "delete",
+    "url": "api/user/:id",
+    "title": "Delete User",
+    "name": "DeleteUser",
+    "group": "User",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "x-access-token",
+            "description": "<p>Users unique access-key.</p>"
+          }
+        ]
+      }
+    },
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "id",
+            "description": "<p>ID do usuário.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "deletedRecords",
+            "description": "<p>Retorna o número de registros deletados.</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "app/controllers/users.server.controller.js",
+    "groupTitle": "User"
+  },
+  {
+    "type": "get",
+    "url": "api/user/:id",
+    "title": "Get User by ID",
+    "name": "GetUser",
+    "group": "User",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "x-access-token",
+            "description": "<p>Users unique access-key.</p>"
+          }
+        ]
+      }
+    },
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "id",
+            "description": "<p>ID do usuário.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Object",
+            "optional": false,
+            "field": "user",
+            "description": "<p>Retorna um objeto que contém as informações do usuário.</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "app/controllers/users.server.controller.js",
+    "groupTitle": "User"
+  },
+  {
+    "type": "get",
+    "url": "api/user",
+    "title": "Get Users",
+    "name": "GetUsers",
+    "group": "User",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "x-access-token",
+            "description": "<p>Users unique access-key.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Object",
+            "optional": false,
+            "field": "users",
+            "description": "<p>Retorna um objeto que contém uma lista de usuários.</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "app/controllers/users.server.controller.js",
+    "groupTitle": "User"
+  },
+  {
+    "type": "put",
+    "url": "api/user/:id",
+    "title": "Update User",
+    "name": "UpdateUser",
+    "group": "User",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "x-access-token",
+            "description": "<p>Users unique access-key.</p>"
+          }
+        ]
+      }
+    },
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "id",
+            "description": "<p>ID do usuário.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "cep",
+            "description": "<p>Cep do usuário.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "nome",
+            "description": "<p>Nome do usuário.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "senha",
+            "description": "<p>Senha do usuário.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "email",
+            "description": "<p>Email do usuário.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "updatedRecords",
+            "description": "<p>Retorna o número de registros alterados.</p>"
           }
         ]
       }

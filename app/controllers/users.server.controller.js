@@ -79,7 +79,7 @@ exports.verify = function(req, res, next){
 
 /**
  * @api {post} api/user Create User
- * @apiName PostUser
+ * @apiName CreateUser
  * @apiGroup User
  *
  * @apiParam {String} cep Cep do usuário.
@@ -97,8 +97,8 @@ exports.create = function(req, res){
     req.body.endereco = response.body;
 
     User.create(req.body)
-      .then(function (newAuthor) {
-        res.status(200).json(newAuthor);
+      .then(function (newUser) {
+        res.status(200).json(newUser);
       })
       .catch(function (error){
         res.status(500).json(error);
@@ -111,13 +111,13 @@ exports.create = function(req, res){
 };
 
 /**
- * @api {get} api/user Request Get Users
+ * @api {get} api/user Get Users
  * @apiName GetUsers
  * @apiGroup User
  *
  * @apiHeader {String} x-access-token Users unique access-key.
  *
- * @apiSuccess {Object} user Retorna um objeto que contém as informações do usuário.
+ * @apiSuccess {Object} users Retorna um objeto que contém uma lista de usuários.
  */
 exports.list = function(req, res){
   User.findAll()
@@ -130,9 +130,11 @@ exports.list = function(req, res){
 };
 
 /**
- * @api {get} api/user/:id Get User
+ * @api {get} api/user/:id Get User by ID
  * @apiName GetUser
  * @apiGroup User
+ *
+ * @apiHeader {String} x-access-token Users unique access-key.
  *
  * @apiParam {Number} id ID do usuário.
  *
@@ -150,17 +152,28 @@ exports.read = function(req, res){
 
 /**
  * @api {put} api/user/:id Update User
- * @apiName DeleteUser
+ * @apiName UpdateUser
  * @apiGroup User
+ *
+ * @apiHeader {String} x-access-token Users unique access-key.
  *
  * @apiParam {Number} id ID do usuário.
  *
- * @apiSuccess {Object} user Retorna um objeto que contém as informações do usuário alterado.
+ * @apiParam {String} cep Cep do usuário.
+ * @apiParam {String} nome Nome do usuário.
+ * @apiParam {String} senha Senha do usuário.
+ * @apiParam {String} email Email do usuário.
+ *
+ * @apiSuccess {Number} updatedRecords Retorna o número de registros alterados.
  */
 exports.update = function(req, res){
-  User.findById(req.params.id)
-  .then(function (author) {
-    res.status(200).json(author);
+  User.update(req.body, {
+    where: {
+      id: req.params.id
+    }
+  })
+  .then(function (updatedRecords) {
+    res.status(200).json(updatedRecords);
   })
   .catch(function (error){
     res.status(500).json(error);
@@ -172,9 +185,11 @@ exports.update = function(req, res){
  * @apiName DeleteUser
  * @apiGroup User
  *
+ * @apiHeader {String} x-access-token Users unique access-key.
+ *
  * @apiParam {Number} id ID do usuário.
  *
- * @apiSuccess {Object} user Retorna um objeto que contém as informações do usuário deletado.
+ * @apiSuccess {Number} deletedRecords Retorna o número de registros deletados.
  */
 exports.delete = function(req, res){
   User.destroy({
