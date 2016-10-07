@@ -16,6 +16,10 @@ module.exports = function () {
   require('../app/routes/user.server.routes.js')(app);
 	require('../app/routes/desejos.server.routes.js')(app);
 
+  app.use(express.static('./public'));
+
+  require('../app/routes/otherwise.server.routes.js')(app);
+
   return server;
 
 };

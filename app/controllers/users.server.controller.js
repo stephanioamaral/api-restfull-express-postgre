@@ -7,6 +7,18 @@ function GetEndereco(cep){
 
 }
 
+/**
+ * @api {get} api/authenticate Authenticate
+ * @apiName Authenticate
+ * @apiGroup User
+ *
+ * @apiParam {String} email Email do usuário.
+*  @apiParam {String} senha Senha do usuário.
+ *
+ * @apiSuccess {Boolean} success Contém um bool que indica se foi bem sucedido.
+ * @apiSuccess {String} message  Mensagem de retorno.
+*  @apiSuccess {String} token Retorna um token para futuras requisições.
+ */
 exports.authenticate = function(req, res){
 
   User.findOne({
@@ -65,6 +77,18 @@ exports.verify = function(req, res, next){
 
 };
 
+/**
+ * @api {post} api/user Create User
+ * @apiName PostUser
+ * @apiGroup User
+ *
+ * @apiParam {String} cep Cep do usuário.
+ * @apiParam {String} nome Nome do usuário.
+ * @apiParam {String} senha Senha do usuário.
+ * @apiParam {String} email Email do usuário.
+ *
+ * @apiSuccess {Object} user Retorna um objeto que contém as informações do usuário cadastrado.
+ */
 exports.create = function(req, res){
 
   requestify.get('http://correiosapi.apphb.com/cep/'+req.body.cep).then(function(response) {
@@ -86,6 +110,15 @@ exports.create = function(req, res){
 
 };
 
+/**
+ * @api {get} api/user Request Get Users
+ * @apiName GetUsers
+ * @apiGroup User
+ *
+ * @apiHeader {String} x-access-token Users unique access-key.
+ *
+ * @apiSuccess {Object} user Retorna um objeto que contém as informações do usuário.
+ */
 exports.list = function(req, res){
   User.findAll()
   .then(function (authors) {
@@ -96,6 +129,15 @@ exports.list = function(req, res){
   });
 };
 
+/**
+ * @api {get} api/user/:id Get User
+ * @apiName GetUser
+ * @apiGroup User
+ *
+ * @apiParam {Number} id ID do usuário.
+ *
+ * @apiSuccess {Object} user Retorna um objeto que contém as informações do usuário.
+ */
 exports.read = function(req, res){
   User.findById(req.params.id)
   .then(function (author) {
@@ -106,6 +148,15 @@ exports.read = function(req, res){
   });
 };
 
+/**
+ * @api {put} api/user/:id Update User
+ * @apiName DeleteUser
+ * @apiGroup User
+ *
+ * @apiParam {Number} id ID do usuário.
+ *
+ * @apiSuccess {Object} user Retorna um objeto que contém as informações do usuário alterado.
+ */
 exports.update = function(req, res){
   User.findById(req.params.id)
   .then(function (author) {
@@ -116,6 +167,15 @@ exports.update = function(req, res){
   });
 };
 
+/**
+ * @api {delete} api/user/:id Delete User
+ * @apiName DeleteUser
+ * @apiGroup User
+ *
+ * @apiParam {Number} id ID do usuário.
+ *
+ * @apiSuccess {Object} user Retorna um objeto que contém as informações do usuário deletado.
+ */
 exports.delete = function(req, res){
   User.destroy({
       where: {
