@@ -8,7 +8,11 @@ Passos para executar a aplicação.
 
 4) Execute o comando: sequelize db:migrate
 
+-- Caso o passo 4 não de certo execute o comando e depois tente novamente: npm install -g sequelize-cli
+
 5) Para executar o projeto digite: grunt
+
+-- Caso o passo 5 ou 6 não de certo execute o comando e depois tente novamente: npm install -g grunt
 
 6) Para executar os testes automatizados digite: grunt test
 
